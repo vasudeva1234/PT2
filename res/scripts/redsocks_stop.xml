@@ -1,0 +1,8 @@
+<xml>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Stop Redsocks Packet Forwarding - DNP3</name>
+		<description>Stop forwarding of packets.</description>
+		<command>./redsocks_stop.sh</command>
+	</testscript>
+</xml>

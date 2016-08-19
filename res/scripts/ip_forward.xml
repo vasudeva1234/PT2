@@ -1,0 +1,14 @@
+<xml>
+	<testscript>
+		<protocol>OpenADR</protocol>
+		<name>Enable IP Forwarding - OpenADR</name>
+		<description>Enable IP Forwarding</description>
+		<command>./ip_forward.py</command>
+	</testscript>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Enable IP Forwarding - DNP3</name>
+		<description>Enable IP Forwarding</description>
+		<command>./ip_forward.py</command>
+	</testscript>
+</xml>

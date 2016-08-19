@@ -1,0 +1,8 @@
+<xml>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Start Redsocks Packet Forwarding - DNP3</name>
+		<description>Forward packets destined for port 20000 to internal port 12345 using a SOCKS proxy.</description>
+		<command>./redsocks_start.sh</command>
+	</testscript>
+</xml>

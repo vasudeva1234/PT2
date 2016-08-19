@@ -1,0 +1,18 @@
+<xml>
+	<testscript>
+		<protocol>OpenADR</protocol>
+		<name>Redirect Ports - OpenADR</name>
+		<description>Configure iptables to redirect port to proxy server.</description>
+		<param name="Original Port:" flag="" default="80" hint="The source port." />
+		<param name="Proxy Port:" flag="" default="8080" hint="The destination port." />
+        <command>python port_redirection.py</command>
+	</testscript>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Redirect Ports - DNP3</name>
+		<description>Configure iptables to redirect port to proxy server.</description>
+		<param name="Original Port:" flag="" default="20000" hint="The source port." />
+		<param name="Proxy Port:" flag="" default="8080" hint="The destination port." />
+        <command>python port_redirection.py</command>
+	</testscript>
+</xml>

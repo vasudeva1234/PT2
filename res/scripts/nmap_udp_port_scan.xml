@@ -1,0 +1,10 @@
+<xml>
+	<testscript>
+		<protocol>OpenADR</protocol>
+		<name>Fast UDP Scan - OpenADR</name>
+		<description>Use nmap to perform a fast scan for open UDP ports on the target.
+		</description>
+		<param name="Target:" flag="" default="192.168.1.1" hint="he hosts to scan.  Any format used by nmap is acceptable." />
+		<command>nmap -sU -F</command>
+	</testscript>
+</xml>

@@ -1,0 +1,586 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.epri</groupId>
+	<artifactId>pt2</artifactId>
+	<version>0.0.2-${maven.build.timestamp}-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>pt2</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jnetpcap.version>1.4.r1380</jnetpcap.version>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+		<build-version>0.0.2-${maven.build.timestamp}-SNAPSHOT</build-version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>net.java.dev.beansbinding</groupId> -->
+		<!-- <artifactId>beansbinding</artifactId> -->
+		<!-- <version>1.2.1</version> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.3.04</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>14.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.3.168</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.1.7.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.1.7.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fifesoft</groupId>
+			<artifactId>rsyntaxtextarea</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.swinglabs.swingx</groupId>
+			<artifactId>swingx-all</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jgoodies</groupId>
+			<artifactId>jgoodies-binding</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jgoodies</groupId>
+			<artifactId>jgoodies-common</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jgoodies</groupId>
+			<artifactId>jgoodies-looks</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jgoodies</groupId>
+			<artifactId>jgoodies-validation</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-swing</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-swt</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-ideutil</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout</artifactId>
+			<version>3.7.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jnetpcap</groupId>
+			<artifactId>jnetpcap</artifactId>
+			<version>${jnetpcap.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.owasp</groupId>
+			<artifactId>proxy</artifactId>
+			<version>1.1-20120925_1038</version>
+		</dependency>
+		
+		<dependency>
+		<groupId>at.HexLib.library</groupId>
+		<artifactId>hexlib</artifactId>
+		<version>0.0a</version>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.bouncycastle</groupId> -->
+		<!-- <artifactId>bcprov-jdk16</artifactId> -->
+		<!-- <version>1.46</version> -->
+		<!-- </dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.bouncycastle</groupId> -->
+		<!-- <artifactId>bcprov-ext-jdk16</artifactId> -->
+		<!-- <version>1.46</version> -->
+		<!-- <type>pom.sig</type> -->
+		<!-- </dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.bouncycastle</groupId> -->
+		<!-- <artifactId>bctsp-jdk16</artifactId> -->
+		<!-- <version>1.46</version> -->
+		<!-- <type>pom.sig</type> -->
+		<!-- </dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>log4j</groupId> -->
+		<!-- <artifactId>log4j</artifactId> -->
+		<!-- <version>1.2.17</version> -->
+		<!-- <type>zip</type> -->
+		<!-- </dependency> -->
+
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.png</include>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install-jnetpcap</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/lib/jnetpcap-${jnetpcap.version}.jar</file>
+							<groupId>org.jnetpcap</groupId>
+							<artifactId>jnetpcap</artifactId>
+							<version>${jnetpcap.version}</version>
+							<packaging>jar</packaging>
+							<createChecksum>true</createChecksum>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>install-jnetpcap-native-win32</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/lib/jnetpcap-native-${jnetpcap.version}-win32.jar</file>
+							<groupId>org.jnetpcap</groupId>
+							<artifactId>jnetpcap-native</artifactId>
+							<version>${jnetpcap.version}</version>
+							<classifier>win32</classifier>
+							<packaging>jar</packaging>
+							<createChecksum>true</createChecksum>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>install-jnetpcap-native-win64</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/lib/jnetpcap-native-${jnetpcap.version}-win64.jar</file>
+							<groupId>org.jnetpcap</groupId>
+							<artifactId>jnetpcap-native</artifactId>
+							<version>${jnetpcap.version}</version>
+							<classifier>win64</classifier>
+							<packaging>jar</packaging>
+							<createChecksum>true</createChecksum>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>install-jnetpcap-native-linux-x86</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/lib/jnetpcap-native-${jnetpcap.version}-linux-x86.jar</file>
+							<groupId>org.jnetpcap</groupId>
+							<artifactId>jnetpcap-native</artifactId>
+							<version>${jnetpcap.version}</version>
+							<classifier>linux-x86</classifier>
+							<packaging>jar</packaging>
+							<createChecksum>true</createChecksum>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>install-jnetpcap-native-linux-x86_64</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/lib/jnetpcap-native-${jnetpcap.version}-linux-x86_64.jar</file>
+							<groupId>org.jnetpcap</groupId>
+							<artifactId>jnetpcap-native</artifactId>
+							<version>${jnetpcap.version}</version>
+							<classifier>linux-x86_64</classifier>
+							<packaging>jar</packaging>
+							<createChecksum>true</createChecksum>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>install-owasp-proxy</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/lib/proxy-1.1-20120925_1038.jar</file>
+							<groupId>org.owasp</groupId>
+							<artifactId>proxy</artifactId>
+							<version>1.1-20120925_1038</version>
+							<packaging>jar</packaging>
+							<createChecksum>true</createChecksum>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					
+					<execution>
+					<id>install-hexlib</id>
+					<phase>validate</phase>
+					<goals>
+						<goal>install-file</goal>
+					</goals>
+					<configuration>
+						<file>${project.basedir}/lib/HexLib.jar</file>
+						<groupId>at.HexLib.library</groupId>
+						<artifactId>hexlib</artifactId>
+						<version>0.0a</version>
+						<packaging>jar</packaging>
+						<createChecksum>true</createChecksum>
+						<generatePom>true</generatePom>
+					</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.jnetpcap</groupId>
+									<artifactId>jnetpcap-native</artifactId>
+									<version>${jnetpcap.version}</version>
+									<classifier>${build.type}</classifier>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/lib</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argline>-Djava.library.path=${project.build.directory}/lib</argline>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib</classpathPrefix>
+							<mainClass>org.epri.pt2.View</mainClass>
+						</manifest>
+						<manifestEntries>
+							<SplashScreen-Image>images/splashscreen.png</SplashScreen-Image>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<resources>
+								<resource>
+									<directory>res</directory>
+									<includes>
+										<include>**/*.py</include>
+                                                                                <include>**/*.sh</include>
+                                                                                <include>**/*.conf</include>
+										<include>**/*.xml</include>
+									</includes>
+								</resource>
+								<resource>
+									<directory>res/run</directory>
+									<includes>
+										<include>**/*.sh</include>
+										<include>**/*.bat</include>
+									</includes>
+									<filtering>true</filtering>
+								</resource>
+								<resource>
+									<directory>${project.basedir}</directory>
+									<includes>
+										<include>Manuals/*.docx</include>
+										<include>Licenses/*.txt</include>
+										<include>ca.p12</include>
+									</includes>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+							<outputDirectory>${project.build.directory}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>process-resources</id>
+						<phase>process-resources</phase>
+						<configuration>
+							<target>
+								<chmod file="target/runPT2.sh" perm="755" />
+								<chmod file="target/runPT2.bat" perm="755" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/pt2-bin-linux-x86_64.xml</descriptor>
+						<descriptor>src/main/assembly/pt2-bin-linux-x86.xml</descriptor>
+						<descriptor>src/main/assembly/pt2-bin-win32.xml</descriptor>
+						<descriptor>src/main/assembly/pt2-bin-win64.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.1,)
+										</versionRange>
+										<goals>
+											<goal>unpack</goal>
+											<goal>copy-dependencies</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-install-plugin
+										</artifactId>
+										<versionRange>
+											[2.3.1,)
+										</versionRange>
+										<goals>
+											<goal>install-file</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- Build Type -->
+	<profiles>
+		<profile>
+			<id>win32</id>
+
+			<properties>
+				<build.type>win32</build.type>
+			</properties>
+		</profile>
+		<profile>
+			<id>win64</id>
+			<properties>
+				<build.type>win64</build.type>
+			</properties>
+		</profile>
+		<profile>
+			<id>linux-x86</id>
+			<properties>
+				<build.type>linux-x86</build.type>
+			</properties>
+		</profile>
+		<profile>
+			<id>linux-x86_64</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.type>linux-x86_64</build.type>
+			</properties>
+		</profile>
+	</profiles>
+
+
+	<repositories>
+		<repository>
+			<id>rep.buildanddeploy.releases</id>
+			<url>http://repo.buildanddeploy.com/maven2</url>
+		</repository>
+	</repositories>
+
+
+</project>

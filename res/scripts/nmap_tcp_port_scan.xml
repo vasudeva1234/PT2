@@ -1,0 +1,18 @@
+<xml>
+	<testscript>
+		<protocol>OpenADR</protocol>
+		<name>Full TCP Port Scan - OpenADR</name>
+		<description>Use nmap to scan for open TCP ports on the target.
+		</description>
+		<param name="Target:" flag="" default="192.168.1.1" hint="The hosts to scan. Any format used by nmap is acceptable." />
+		<command>nmap -sS -p-</command>
+	</testscript>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Full TCP Port Scan - DNP3</name>
+		<description>Use nmap to scan for open TCP ports on the target.
+		</description>
+		<param name="Target:" flag="" default="192.168.1.1" hint="The hosts to scan. Any format used by nmap is acceptable." />
+		<command>nmap -sS -p-</command>
+	</testscript>
+</xml>

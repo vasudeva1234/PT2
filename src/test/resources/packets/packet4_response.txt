@@ -1,0 +1,82 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+ETag: "d41d8cd98f00b204e9800998ecf8427e"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge,chrome=1
+Set-Cookie: _eiserver_session=BAh7CCIPc2Vzc2lvbl9pZCIlYTliMjdiN2MzMDVjMzcxYWU1OTIyZDZiN2M3NThjZGYiEWN1cnJlbnRfdXNlcm86DEFjY291bnQNOhhAY2hhbmdlZF9hdHRyaWJ1dGVzewA6D0BwZXJzaXN0ZWRUOhxAbWFya2VkX2Zvcl9kZXN0cnVjdGlvbkY6EEBhdHRyaWJ1dGVzexYiB2lkaRMiDXVzZXJuYW1lIglTV1JJIhFkaXNwbGF5X25hbWUiCVNXUkkiF2VuY3J5cHRlZF9wYXNzd29yZCIRVTFkU1NUcHpkM0pwIglzYWx0MCINaXNfYWRtaW5pACIPY3JlYXRlZF9hdCIYMjAxMi0wNy0wNiAyMDo0MDo0MCIPdXBkYXRlZF9hdCIYMjAxMi0wNy0xMCAyMDo1MTo0NiIOZmlyc3RuYW1lIgAiDWxhc3RuYW1lIgAiDGNvbXBhbnkiACINY29udGFjdDEiACISY29udGFjdDFfdHlwZSIAIg1jb250YWN0MiIAIhJjb250YWN0Ml90eXBlIgAiDWNvbnRhY3QzIgAiEmNvbnRhY3QzX3R5cGUiADoPQGRlc3Ryb3llZEY6GEBwcmV2aW91c2x5X2NoYW5nZWR7ADoWQGF0dHJpYnV0ZXNfY2FjaGV7ADoOQHJlYWRvbmx5RiIQX2NzcmZfdG9rZW4iMU1oS3pHdUh6aWhBeHJjbFA4TlpXbDFFQThjY2d5UlZ4ajl6L1QyOW1aQXM9--324cd2b4253ac5947f4e28fe976ca239f35a2ebd; path=/; HttpOnly
+X-Runtime: 0.344000
+Content-Type: application/xml;charset=utf-8
+Date: Fri, 28 Sep 2012 23:21:30 GMT
+Content-Length: 3024
+Via: 1.1 ironport260mgmt-1.itc.swri.edu:80 (Cisco-IronPort-WSA/7.5.0-825)
+Connection: keep-alive
+
+<?xml version="1.0" encoding="UTF-8"?>
+<oadr:oadrDistributeEvent xmlns:oadr="http://openadr.org/2.0/Core"
+    xmlns:pyld="http://docs.oasis-open.org/ns/energyinterop/201110/payloads"
+    xmlns:emix="http://docs.oasis-open.org/ns/emix/2011/06"
+    xmlns:xcal="urn:ietf:params:xml:ns:icalendar-2.0"
+    xmlns:ei="http://docs.oasis-open.org/ns/energyinterop/201110"
+    xmlns:strm="urn:ietf:params:xml:ns:icalendar-2.0:stream"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">   
+    <oadr:eiResponse>
+        <ei:responseCode>200</ei:responseCode>
+        <ei:responseDescription></ei:responseDescription>
+    </oadr:eiResponse>
+    <oadr:requestID>12277</oadr:requestID>
+    <oadr:venID>14</oadr:venID>
+    <oadr:vtnID>EIOS</oadr:vtnID>
+    <oadr:reponseeRequired>always</oadr:reponseeRequired>
+    <oadr:eiEvent>
+       <oadr:eventDescriptor>
+            <ei:eventID>0</ei:eventID>
+            <ei:eventStatus>active</ei:eventStatus>
+            <ei:priority>1</ei:priority>
+            <ei:modificationNumber>0</ei:modificationNumber>
+            <oadr:eiMarketContext>
+                <emix:marketContext>Test</emix:marketContext>
+            </oadr:eiMarketContext>
+            <ei:createdDateTime>20120928T232130Z</ei:createdDateTime>
+            <ei:testEvent>false</ei:testEvent>
+            <oadr:vtnComment>no comment</oadr:vtnComment>
+        </oadr:eventDescriptor>
+        <oadr:eiActivePeriod>
+            <oadr:properties>
+                <oadr:dtstart>
+                    <xcal:date-time>20120928T232130Z</xcal:date-time>
+                </oadr:dtstart>
+                <oadr:duration>
+                    <oadr:duration>PT0S</oadr:duration>
+                </oadr:duration>
+            </oadr:properties>
+            <oadr:components/>
+        </oadr:eiActivePeriod>
+        <oadr:eiEventSignals>
+            <oadr:eiEventSignal ei:schemaVersion="1.0">
+                <oadr:intervals>
+                    <oadr:interval>
+                        <oadr:duration>
+                            <oadr:duration>PT0S</oadr:duration>
+                        </oadr:duration>
+                        <oadr:uid>
+                            <xcal:text>0</xcal:text>
+                        </oadr:uid>
+                        <oadr:signalPayload>
+                            <ei:payloadFloat>
+                                <ei:value>75</ei:value>
+                            </ei:payloadFloat>
+                        </oadr:signalPayload>
+                    </oadr:interval>
+                </oadr:intervals>
+                <ei:signalName>simple</ei:signalName>
+                <ei:signalType>price</ei:signalType>
+                <ei:signalID>51c795f9-ae58-4073-8a24-9d27da77e768</ei:signalID>
+                <oadr:currentValue>
+                    <ei:payloadFloat>
+                        <ei:value>75</ei:value>
+                    </ei:payloadFloat>
+                </oadr:currentValue>
+            </oadr:eiEventSignal>
+        </oadr:eiEventSignals>
+    </oadr:eiEvent>
+</oadr:oadrDistributeEvent>

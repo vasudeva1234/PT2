@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="pt2-pu" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>org.epri.pt2.DO.WorkspaceDO</class>
+		<class>org.epri.pt2.DO.ProjectDO</class>
+		<class>org.epri.pt2.DO.TestCaseDO</class>
+		<class>org.epri.pt2.DO.TestScriptDO</class>
+		<class>org.epri.pt2.DO.DeviceDO</class>
+		<class>org.epri.pt2.DO.AbstractIfaceDO</class>
+		<class>org.epri.pt2.DO.EthernetIfaceDO</class>
+		<class>org.epri.pt2.DO.AbstractProtocolDO</class>
+		<class>org.epri.pt2.DO.OpenADRProtocolDO</class>
+		<class>org.epri.pt2.DO.DNP3ProtocolDO</class>
+		<class>org.epri.pt2.DO.AbstractPacketDO</class>
+		<class>org.epri.pt2.DO.HTTPPacketDO</class>
+		<class>org.epri.pt2.DO.DNP3ApplicationPacketDO</class>
+		<class>org.epri.pt2.DO.HTTPContentDataDO</class>
+		<class>org.epri.pt2.DO.FuzzTestDO</class>
+		<class>org.epri.pt2.DO.DataTypeDO</class>
+		<class>org.epri.pt2.DO.FuzzTestResultDO</class>
+		<class>org.epri.pt2.DO.TestScriptParameterDO</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.connection.provider_class"
+				value="org.hibernate.connection.DriverManagerConnectionProvider" />
+			<property name="hibernate.connection.url" value="jdbc:h2:./database" />
+			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+			<property name="hibernate.connection.pool_size" value="1" />
+			<property name="hibernate.connection.username" value="swri" />
+			<property name="hibernate.cache.use_second_level_cache"
+				value="false" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

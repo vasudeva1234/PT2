@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pyld="http://docs.oasis-open.org/ns/energyinterop/201110/payloads" xmlns:ei="http://docs.oasis-open.org/ns/energyinterop/201110" xmlns:emix="http://docs.oasis-open.org/ns/emix/2011/06" targetNamespace="http://docs.oasis-open.org/ns/energyinterop/201110/payloads" elementFormDefault="qualified" attributeFormDefault="qualified">
+   <xs:import namespace="http://docs.oasis-open.org/ns/emix/2011/06" schemaLocation="oadr_emix_20a_010312.xsd"/>
+   <xs:import namespace="http://docs.oasis-open.org/ns/energyinterop/201110" schemaLocation="oadr_ei_20a_010312.xsd"/>
+   <!--  ******* requestID ******** -->
+   <xs:element name="requestID" type="xs:string"/>
+   <!--  ******* eventFilter ******** -->
+   <xs:element name="eventFilter" type="pyld:EventFilterType"/>
+   <!--  *******="EventFilterType">******** -->
+   <xs:simpleType name="EventFilterType">
+      <xs:annotation>
+         <xs:documentation>Used to restrict the Events exchanged in Event Requests.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:token">
+         <xs:enumeration value="active">
+            <xs:annotation>
+               <xs:documentation>An event qualifies if the Active Interval coincides with the Request. If specified with an accompanying Interval, an Event qualifies if any part of the Active Interval occurs within the specifying Interval; without accompanying Interval, "now" is treated as an infinitesimal Interval with a current starting date and time.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="pending">
+            <xs:annotation>
+               <xs:documentation>An event qualifies if the Active Interval starting date and time is in the future. If specified with an accompanying Interval, the Event qualifies if the Active Interval has not started (is not Active) at the Start of the Interval, and the Active Interval start is within the bounds of the specifying Interval.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="all">
+            <xs:annotation>
+               <xs:documentation>An event qualifies if it would qualify as either Active or Pending.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="completed">
+            <xs:annotation>
+               <xs:documentation>An Event qualifies if the Active Interval is completed before the Request. If specified with an accompanying Interval, and Event qualifies if the end of the Active Interval before the start of the Requesting Interval. Conforming profiles MAY return a NULL set in response to a Request for Completed Intervals, as there is no requirement to store or be able to retrieve Completed Events.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="cancelled">
+            <xs:annotation>
+               <xs:documentation>An Event qualifies if it has been Cancelled. If specified with an accompanying Interval, and Event qualifies if the Event would have qualified as Active during the Interval. Conforming profiles MAY return a NULL set in response to a request for Completed Intervals as there is no requirement to store or be able to retrieve Cancelled Events.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <!--  ******* replyLimitt ******** -->
+   <xs:element name="replyLimit" type="xs:unsignedInt"/>
+   <!--  ******* eiReplyPendingEvent ******** -->
+   <xs:element name="eiReplyPendingEvent">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ei:eiResponse"/>
+            <xs:element ref="ei:qualifiedEventID" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <!--  *******eiRequestPendingEvent ******** -->
+   <xs:element name="eiRequestPendingEvent">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="pyld:requestID"/>
+            <xs:element ref="ei:venID"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <!--  *******eiRequestEvent******** -->
+   <xs:element name="eiRequestEvent">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="pyld:requestID"/>
+            <xs:element ref="ei:eventID" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="emix:marketContext" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="ei:venID"/>
+            <xs:element ref="pyld:eventFilter" minOccurs="0"/>
+            <xs:element ref="pyld:replyLimit" minOccurs="0"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <!--  ******* eiCreatedEvent ******** -->
+   <xs:element name="eiCreatedEvent">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ei:eiResponse"/>
+            <xs:element ref="ei:eventResponses" minOccurs="0"/>
+            <xs:element ref="ei:venID"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

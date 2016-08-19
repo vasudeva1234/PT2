@@ -1,0 +1,14 @@
+org.epri.pt2
+org.epri.pt2.DO
+org.epri.pt2.controller
+org.epri.pt2.fuzzer
+org.epri.pt2.fuzzer.request
+org.epri.pt2.gui
+org.epri.pt2.gui.model
+org.epri.pt2.listeners
+org.epri.pt2.packetparser
+org.epri.pt2.packetparser.treemodel
+org.epri.pt2.proxy
+org.epri.pt2.reassembler
+org.epri.pt2.scriptxmlparser
+org.epri.pt2.sniffer

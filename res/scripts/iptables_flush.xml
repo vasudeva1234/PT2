@@ -1,0 +1,14 @@
+<xml>
+	<testscript>
+		<protocol>OpenADR</protocol>
+		<name>Flush IP Tables - OpenADR</name>
+		<description>Flush all IP Tables.</description>
+        <command>python iptables_flush.py</command>
+	</testscript>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Flush IP Tables - DNP3</name>
+		<description>Flush all IP Tables</description>
+        <command>python iptables_flush.py</command>
+	</testscript>
+</xml>

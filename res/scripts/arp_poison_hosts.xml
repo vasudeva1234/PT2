@@ -1,0 +1,17 @@
+<xml>
+	<testscript>
+		<protocol>OpenADR</protocol>
+		<name>Arp Poison Hosts - OpenADR</name>
+		<description>Use arpspoof to capture traffic between two hosts on the network.</description>
+		<param name="Interface:" flag="" default="eth0" hint="The interface to launch the arp poisoning attack on.  Leave this field empty to select the default interface." />
+		<param name="Target1:" flag="" default="192.168.1.1" hint="The ip address of the gateway" />
+		<param name="Target2:" flag="" default="192.168.1.100" hint="The ip address of the device" />
+        <command>python arp_poison_hosts.py</command>
+	</testscript>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Arp Poison Hosts - DNP3</name>
+		<description>Use arpspoof to capture traffic between two hosts on the network.</description>
+        <command>python arp_poison_hosts.py</command>
+	</testscript>
+</xml>

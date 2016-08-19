@@ -1,0 +1,15 @@
+<xml>
+	<testscript>
+		<protocol>OpenADR</protocol>
+		<name>Host Scan - OpenADR</name>
+		<description>Use nmap to scan for hosts on the network.</description>
+		<param name="IP Range" flag="" default="192.168.1.1-254" hint="A range of ip's to scan. Any format used by nmap is acceptable." />
+		<command>nmap -sn</command>
+	</testscript>
+	<testscript>
+		<protocol>DNP3</protocol>
+		<name>Host Scan - DNP3</name>
+		<description>Use nmap to scan for hosts on the network.</description>
+		<command>nmap -sn</command>
+	</testscript>
+</xml>
